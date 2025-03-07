@@ -24,12 +24,12 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     let y = (pr * 100 - req_per * tot) / req_per;
     const p = document.createElement("p");
     let bunk_per = parseFloat(pr / (tot + Math.round(y))) * 100;
-    p.textContent = `
-        You can BUNK ${Math.round(y)} Classes 🙂 \n
-        Current Attendence : ${pr} / ${tot} -> ${cur_per.toFixed(2)}% \n
-        Attendence Then : ${pr} / ${tot + Math.round(y)} -> ${bunk_per.toFixed(
-      2
-    )}%
+    p.innerHTML = `
+        You can BUNK <strong>${Math.round(y)}</strong> Classes 😄 <br><br>
+        <strong>Current Attendance:</strong> 
+        ${pr} / ${tot} -> ${cur_per.toFixed(2)}% <br><br>
+        <strong>Attendance Then:</strong> 
+        ${pr} / ${tot + Math.round(y)} -> ${bunk_per.toFixed(2)}%
     `;
     displaySec.appendChild(p);
   } else {
@@ -38,12 +38,12 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     needToAttend = Math.round(x);
     let then_per = ((pr + Math.round(x)) / (tot + Math.round(x))) * 100;
     const p = document.createElement("p");
-    p.textContent = `
-        You Need to Attend ${needToAttend} More Classes to Get ${req_per}% Attendance!!! \n\n\n
-        Current Attendence : ${pr} / ${tot} -> ${cur_per.toFixed(2)}% 
-            Attendence Then : ${pr + Math.round(x)} / ${
-      tot + Math.round(x)
-    } -> ${then_per.toFixed(2)}%
+    p.innerHTML = `
+        You Need to Attend <strong>${needToAttend}</strong> More Classes to Get <strong>${req_per}%</strong> Attendance!!! <br><br>
+        <strong>Current Attendance:</strong> 
+        ${pr} / ${tot} -> ${cur_per.toFixed(2)}% <br><br>
+        <strong>Attendance Then:</strong> 
+        ${pr + Math.round(x)} / ${tot + Math.round(x)} -> ${then_per.toFixed(2)}%
     `;
 
     displaySec.appendChild(p);
