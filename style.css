@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: azure;
   }
   
   body,
@@ -16,7 +17,7 @@
     text-align: center;
     margin-top: 2rem;
     padding-top: 0.8rem;
-    margin-bottom: 3rem;
+    margin-bottom: 0.2  rem;
   }
   
   main {
@@ -41,13 +42,18 @@
     padding: 1rem;
     padding-left: 6rem;
     outline: none;
+    background-color: white;
   }
+
   
+
   label {
     position: absolute;
     z-index: 1;
     font-size: 1.3rem;
     margin: 20px 55px;
+    background-color: white;
+    font-family: "Iansui";
   }
   
   .submitBtn {
@@ -55,12 +61,13 @@
     color: white;
     padding: 0.5rem;
     text-align: center;
-    font-size: medium;
+    font-size:large
     width: 10vw;
     border-radius: 3px;
     border: none;
-    margin: 0 8rem;
+    margin: 1rem 8rem;
     cursor: pointer;
+    font-family: "Nosifer";
   }
   
   #displaySec {
