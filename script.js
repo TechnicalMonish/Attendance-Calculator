@@ -35,7 +35,7 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   } else {
     let dif = 100 - req_per;
     let x = (req_per * tot - 100 * pr) / dif;
-    needToAttend = x;
+    needToAttend = Math.round(x);
     let then_per = ((pr + Math.floor(x)) / (tot + Math.floor(x))) * 100;
     const p = document.createElement("p");
     p.textContent = `
