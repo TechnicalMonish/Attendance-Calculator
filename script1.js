@@ -21,44 +21,42 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
 
   let cur_per = (pr / tot) * 100;
 
-  if (cur_per > req_per) {
-    let y = (pr * 100 - req_per * tot) / req_per;
+  if (cur_per == 100) {
     const p = document.createElement("p");
-    let bunk_per = parseFloat(pr / (tot + Math.round(y))) * 100;
-    p.innerHTML = `
+    p.innerHTML =
+      "<strong>CHILL!</strong> 😎 You already Have 100% Attendance! ";
+    displaySec.appendChild(p);
+  }
+    
+    if (cur_per > req_per) {
+      let y = (pr * 100 - req_per * tot) / req_per;
+      const p = document.createElement("p");
+      let bunk_per = parseFloat(pr / (tot + Math.round(y))) * 100;
+      p.innerHTML = `
         You can BUNK <strong>${Math.round(y)}</strong> Classes! 🥳 <br><br>
         <strong>Current Attendance :</strong> 
         ${pr} / ${tot} -> ${cur_per.toFixed(2)}% <br><br>
         <strong>Attendance Then :</strong> 
         ${pr} / ${tot + Math.round(y)} -> ${bunk_per.toFixed(2)}%
     `;
-    displaySec.appendChild(p);
-  } else if (cur_per == 100) {
+      displaySec.appendChild(p);
+    }
+  } 
+  else {
+    let dif = 100 - req_per;
+    let x = (req_per * tot - 100 * pr) / dif;
+    needToAttend = Math.ceil(x);
+    let then_per = ((pr + Math.ceil(x)) / (tot + Math.ceil(x))) * 100;
     const p = document.createElement("p");
-    p.innerHTML =
-      "<strong>CHILL!</strong> 😎 You already Have 100% Attendance! ";
-    displaySec.appendChild(p);
-  } else {
-    if (req_per != 100) {
-      let dif = 100 - req_per;
-      let x = (req_per * tot - 100 * pr) / dif;
-      needToAttend = Math.ceil(x);
-      let then_per = ((pr + Math.ceil(x)) / (tot + Math.ceil(x))) * 100;
-      const p = document.createElement("p");
-      p.innerHTML = `
+    p.innerHTML = `
         You Need to Attend <strong>${needToAttend}</strong> More Classes to Get <strong>${req_per}%</strong> Attendance! 😮‍💨 <br><br>
         <strong>Current Attendance :</strong> 
         ${pr} / ${tot} -> ${cur_per.toFixed(2)}% <br><br>
         <strong>Attendance Then :</strong> 
         ${pr + Math.ceil(x)} / ${tot + Math.ceil(x)} -> ${then_per.toFixed(2)}%
     `;
-      displaySec.appendChild(p);
-      
-    } else {
-      const p = document.createElement("p");
-      p.innerHTML =
-        "<strong>SORRY!</strong> ☹️ You Cannot get 100% Attendance as You Missed Your Classes! ";
-      displaySec.appendChild(p);
-    }
+
+    displaySec.appendChild(p);
+  }
   }
 });
