@@ -1,89 +1,124 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: azure;
-  }
-    h1{
-        font-family: "Honk";
-        font-size: 55px;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: azure;
+}
 
+h1 {
+  font-family: "Honk";
+  font-size: 55px;
+}
 
-  body,
-  html {
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+nav {
+  height: 8vh;
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 0.8rem;
+  margin-bottom: 0.2 rem;
+}
+
+main {
+  height: 45vh;
+  max-width: 780px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  width: 55%;
+  height: 55%;
+}
+
+input {
+  margin: 1rem 0 1rem 3rem;
+  height: 4vh;
+  width: 80%;
+  font-size: medium;
+  padding: 1rem;
+  padding-left: 6rem;
+  border-radius: 5px;
+  outline: none;
+  background-color: white;
+}
+
+label {
+  position: absolute;
+  z-index: 1;
+  font-size: 1.3rem;
+  margin: 20px 55px;
+  background-color: white;
+  font-family: "Iansui";
+}
+
+.submitBtn {
+  font-family: "Nosifer";
+  background-color: blue;
+  width: 15vw;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 20px;
+  border: none;
+  margin: 1rem 7rem;
+  cursor: pointer;
+  font-size: large;
+}
+
+#displaySec {
+  height: 7vh;
+  font-size: 1.5rem;
+  text-align: center;
+  padding-top: 3rem;
+}
+
+p {
+  font-family: "Tinos";
+  color: brown;
+}
+
+@media screen and (min-width: 320px) and (max-width: 426px) {
+  h1 {
+    height: 20vh;
+    font-size: 2.2rem;
   }
-  
   nav {
-    height: 8vh;
-    text-align: center;
-    margin-top: 2rem;
-    padding-top: 0.8rem;
-    margin-bottom: 0.2  rem;
+    height: 20vh;
   }
-  
-  main {
-    height: 45vh;
-    max-width: 780px;
-    margin: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
   .inner {
-    width: 55%;
-    height: 55%;
+    height: 50vh;
+    width: 95vw;
+    margin-top: 3rem;
   }
-  
   input {
-    margin: 1rem 0 1rem 3rem;
-    height: 4vh;
-    width: 80%;
-    font-size: medium;
-    padding: 1rem;
-    padding-left: 6rem;
-    outline: none;
-    background-color: white;
+    margin: 1rem 0 1rem 1rem;
+    width: 93%;
+    font-size: 0.9rem;
+    border-radius: 5px;
   }
-
-  
-
   label {
-    position: absolute;
-    z-index: 1;
-    font-size: 1.3rem;
-    margin: 20px 55px;
-    background-color: white;
-    font-family: "Iansui";
+    margin: 20px;
   }
-  
   .submitBtn {
-    background-color:blue;
-    color: white;
-    padding: 0.5rem;
-    text-align: center;
-    font-size:large
-    width: 10vw;
-    border-radius: 3px;
-    border: none;
-    margin: 1rem 8rem;
-    cursor: pointer;
-    font-family: "Nosifer";
+    margin: 1rem 5rem;
+    width: 50vw;
+    border-radius: 20px;
   }
-  
-  #displaySec {
-    /* border: 2px solid red; */
-    height: 7vh;
-    font-size: 1.5rem;
-    text-align: center;
-    padding-top: 3rem;
-  }
+}
 
-  p{
-    font-family:"Tinos" ;
-    color: brown;
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .submitBtn {
+    margin: 1rem 8rem;
+    width: 25vw;
+    border-radius: 20px;
   }
+}
