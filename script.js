@@ -24,13 +24,13 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   if (cur_per > req_per) {
     let y = (pr * 100 - req_per * tot) / req_per;
     const p = document.createElement("p");
-    let bunk_per = parseFloat(pr / (tot + Math.round(y))) * 100;
+    let bunk_per = parseFloat(pr / (tot + Math.floor(y))) * 100;
     p.innerHTML = `
-        You can BUNK <strong>${Math.round(y)}</strong> Classes! 🥳 <br><br>
+        You can BUNK <strong>${Math.floor(y)}</strong> Classes! 🥳 <br><br>
         <strong>Current Attendance :</strong> 
         ${pr} / ${tot} -> ${cur_per.toFixed(2)}% <br><br>
         <strong>Attendance Then :</strong> 
-        ${pr} / ${tot + Math.round(y)} -> ${bunk_per.toFixed(2)}%
+        ${pr} / ${tot + Math.floor(y)} -> ${bunk_per.toFixed(2)}%
     `;
     displaySec.appendChild(p);
   } else if (cur_per == 100) {
@@ -53,7 +53,6 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
         ${pr + Math.ceil(x)} / ${tot + Math.ceil(x)} -> ${then_per.toFixed(2)}%
     `;
       displaySec.appendChild(p);
-      
     } else {
       const p = document.createElement("p");
       p.innerHTML =
