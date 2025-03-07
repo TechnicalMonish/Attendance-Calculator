@@ -26,9 +26,9 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     let bunk_per = parseFloat(pr / (tot + Math.round(y))) * 100;
     p.innerHTML = `
         You can BUNK <strong>${Math.round(y)}</strong> Classes 😄 <br><br>
-        <strong>Current Attendance:</strong> 
+        <strong>Current Attendance :</strong> 
         ${pr} / ${tot} -> ${cur_per.toFixed(2)}% <br><br>
-        <strong>Attendance Then:</strong> 
+        <strong>Attendance Then :</strong> 
         ${pr} / ${tot + Math.round(y)} -> ${bunk_per.toFixed(2)}%
     `;
     displaySec.appendChild(p);
@@ -40,9 +40,9 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     const p = document.createElement("p");
     p.innerHTML = `
         You Need to Attend <strong>${needToAttend}</strong> More Classes to Get <strong>${req_per}%</strong> Attendance!!! <br><br>
-        <strong>Current Attendance:</strong> 
+        <strong>Current Attendance :</strong> 
         ${pr} / ${tot} -> ${cur_per.toFixed(2)}% <br><br>
-        <strong>Attendance Then:</strong> 
+        <strong>Attendance Then :</strong> 
         ${pr + Math.round(x)} / ${tot + Math.round(x)} -> ${then_per.toFixed(2)}%
     `;
 
