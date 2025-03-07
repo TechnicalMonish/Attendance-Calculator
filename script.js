@@ -35,15 +35,15 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
   } else {
     let dif = 100 - req_per;
     let x = (req_per * tot - 100 * pr) / dif;
-    needToAttend = Math.round(x);
-    let then_per = ((pr + Math.round(x)) / (tot + Math.round(x))) * 100;
+    needToAttend = Math.ceil(x);
+    let then_per = ((pr + Math.ceil(x)) / (tot + Math.ceil(x))) * 100;
     const p = document.createElement("p");
     p.innerHTML = `
         You Need to Attend <strong>${needToAttend}</strong> More Classes to Get <strong>${req_per}%</strong> Attendance!!! <br><br>
         <strong>Current Attendance :</strong> 
         ${pr} / ${tot} -> ${cur_per.toFixed(2)}% <br><br>
         <strong>Attendance Then :</strong> 
-        ${pr + Math.round(x)} / ${tot + Math.round(x)} -> ${then_per.toFixed(2)}%
+        ${pr + Math.ceil(x)} / ${tot + Math.ceil(x)} -> ${then_per.toFixed(2)}%
     `;
 
     displaySec.appendChild(p);
