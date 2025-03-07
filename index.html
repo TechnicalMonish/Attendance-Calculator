@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendence</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <h1>Enter the Attendence Details :</h1>
+    </nav>
+    <main>
+      <div class="inner">
+        <form action="#" id="myForm">
+          <label for="present">Present : </label>
+          <input
+            type="number"
+            id="present"
+            placeholder="Enter Attendence"
+            required
+          />
+          <br />
+          <label for="total">Total : </label>
+          <input
+            type="number"
+            id="total"
+            placeholder="Enter Attendence"
+            required
+          />
+          <br />
+          <label for="req">Req % : </label>
+          <input
+            type="number"
+            id="req"
+            placeholder="Enter Attendence"
+            required
+          />
+          <br />
+          <button type="submit" class="submitBtn">Calculate</button>
+        </form>
+      </div>
+    </main>
+
+    <div id="displaySec"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
